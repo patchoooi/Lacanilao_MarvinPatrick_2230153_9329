@@ -1,0 +1,60 @@
+<data>
+    <!-- Valid Expressions -->
+    <expression>
+        <operand1>5</operand1>
+        <operator>^</operator>
+        <operand2>2</operand2>
+    </expression>
+    <expression>
+        <operand1>12</operand1>
+        <operator>%</operator>
+        <operand2>5</operand2>
+    </expression>
+    <expression>
+        <operand1>8.5</operand1>
+        <operator>*</operator>
+        <operand2>2</operand2>
+    </expression>
+    <expression>
+        <operand1>20</operand1>
+        <operator>/</operator>
+        <operand2>4</operand2>
+    </expression>
+    <expression>
+        <operand1>15</operand1>
+        <operator>+</operator>
+        <operand2>7</operand2>
+    </expression>
+
+    <!-- Invalid Expressions -->
+    <expression>
+        <operand1>5.2</operand1>
+        <operator>+</operator>
+        <operand2>2.x</operand2>
+    </expression>
+    <expression>
+        <operand1>23</operand1>
+        <operator>$</operator>
+        <operand2>2.5</operand2>
+    </expression>
+    <expression>
+        <operand1>10</operand1>
+        <operator>*</operator>
+        <operand2>three</operand2>
+    </expression>
+    <expression>
+        <operand1>18</operand1>
+        <operator>#</operator>
+        <operand2>6</operand2>
+    </expression>
+    <expression>
+        <operand1>4.5</operand1>
+        <operator>-</operator>
+        <operand2>2.5</operand2>
+    </expression>
+    <expression>
+        <operand1>100</operand1>
+        <operator>*</operator>
+        <operand2>2</operand2>
+    </expression>
+</data>
