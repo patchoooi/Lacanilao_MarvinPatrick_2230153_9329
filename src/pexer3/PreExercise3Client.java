@@ -27,22 +27,34 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 
+/**
+ * The PreExercise3Client class implements a simple client that reads mathematical
+ * expressions from an input file, sends them to a server, and prints the responses
+ * received from the server.
+ */
 public class PreExercise3Client {
-
     public static void main(String[] args) {
-        try (Socket socket = new Socket("localhost", 5420);
-             BufferedWriter serverWriter = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
-             BufferedReader serverReader = new BufferedReader(new InputStreamReader(socket.getInputStream()))) {
-
+        try (
+                // Create a socket connection to the server
+                Socket socket = new Socket("localhost", 5420);
+                // Create BufferedWriter to send data to the server
+                BufferedWriter serverWriter = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+                // Create BufferedReader to receive data from the server
+                BufferedReader serverReader = new BufferedReader(new InputStreamReader(socket.getInputStream()))
+        ) {
+            // Read expressions from the input file
             List<String> expressions = Files.readAllLines(Paths.get("res/exer3.xml"));
 
+            // Send expressions to the server
             for (String expression : expressions) {
                 serverWriter.write(expression + "\n");
             }
 
+            // Send "bye" to indicate the end of data
             serverWriter.write("bye\n");
             serverWriter.flush();
 
+            // Receive and print responses from the server
             String response;
             while ((response = serverReader.readLine()) != null) {
                 System.out.println(response);
